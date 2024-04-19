@@ -61,7 +61,7 @@ def decrypt_aes_ccm(key, mac, data):
     return None
 
 macReversed=""
-for x in range(-1,-len(mac),-2):
+for x in range(-1, -len(mac), -2):
     macReversed += mac[x-1] + mac[x]
 macReversed = bytes.fromhex(macReversed.lower())
 decrypt_aes_ccm(key, macReversed, encrypted_data)
